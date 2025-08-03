@@ -583,3 +583,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+
+// دالة عكس ترتيب القائمة
+function reverseList() {
+  if (videos.length === 0) {
+    showToast("لا توجد فيديوهات لعكسها.", true);
+    return;
+  }
+
+  saveState(); // حفظ الحالة قبل التعديل
+  videos.reverse();
+  updateTable();
+  saveToLocalStorage();
+  showToast("تم عكس ترتيب القائمة بنجاح", false);
+}
